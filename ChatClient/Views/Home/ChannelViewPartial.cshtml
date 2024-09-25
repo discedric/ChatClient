@@ -1,0 +1,37 @@
+﻿@model IList<ChatMessageResult>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div>
+    @if (Model.Any())
+    {
+        <h1>Channel</h1>
+        <div id="messages">
+            @foreach (var message in Model)
+            {
+                <div class="message">
+                    <div class="message-header">
+                        <span class="message-author"><@message.author></></span>
+                    </div>
+                    <div class="message-content">
+                        @message.message
+                    </div>
+                    <div class="message-footer">
+                        <span class="message-date">@message.createdAt</span>
+                    </div>
+                </div>
+            }
+        </div>
+        <form id="messageForm">
+            <input type="text" id="messageInput"/>
+            <button type="submit">Send</button>
+        </form>
+    }
+    else
+    {
+        <h1>No channel selected</h1>
+    }
+</div>

@@ -1,0 +1,20 @@
+﻿@model IList<ChatChannelResult>
+@{
+    ViewData["Title"] = "Home Page";
+    @section Style{
+        <link rel="stylesheet" href="~/css/Chat.css" asp-append-version="true" />
+    }
+}
+
+@section Channels
+{
+    @if (Model.Any())
+    {
+        foreach(var channel in Model)
+        {
+            <a asp-action="GetChannel" asp-route-Name="@channel.Name" class="channel">@channel.Name</a>
+        }
+    }
+}
+
+<partial name="ChannelViewPartial" model="new List<ChatMessageResult>()"/>

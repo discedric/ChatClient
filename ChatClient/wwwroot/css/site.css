@@ -1,0 +1,57 @@
+body{
+    display:flex;
+    flex-direction:row;
+    height:100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100vh; /* Full height */
+    width: 250px; /* Sidebar width */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Dark background */
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar{
+    width: 1px;
+    color:white;
+}
+
+.sidebar a {
+    width: 100%;
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+    border: 1px solid #f1f1f1;
+}
+
+.sidebar .nameField{
+    width: 100%;
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    border: 1px solid #f1f1f1;
+    display:flex;
+    flex-direction:row;
+}
+
+    .sidebar #nameInput{
+        height: 30px;
+    }
+
+    .content {
+        margin-left: 250px; /* Same width as the sidebar */
+        padding: 16px;
+        transition: margin-left 0.3s;
+    }
