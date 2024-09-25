@@ -1,0 +1,13 @@
+﻿@model IList<ChatChannelResult>
+
+@section Style {
+    <link rel="stylesheet" href="~/css/Chat.css" asp-append-version="true" />
+}
+
+@if (Model.Any())
+{
+    foreach (var channel in Model)
+    {
+        <a href="#" class="channel" data-channel="@channel.Name">@channel.Name</a>
+    }
+}

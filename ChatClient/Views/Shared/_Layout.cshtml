@@ -13,9 +13,9 @@
 <div class="sidebar" id="sidebar">
     <div class="nameField">
         <p>Name:</p>
-        <input type="text" id="nameInput"/>
+        <input type="text" id="User" />
     </div>
-    @await RenderSectionAsync("Channels", required: true)
+    @await Component.InvokeAsync("Channel",new {type = "Channels"})
 </div>
 <div class="container">
     <main role="main" class="pb-3">
