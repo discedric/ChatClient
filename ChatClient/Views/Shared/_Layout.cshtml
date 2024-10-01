@@ -12,8 +12,10 @@
 <body>
 <div class="sidebar" id="sidebar">
     <div class="nameField">
-        <p>Name:</p>
-        <input type="text" id="User" />
+        <form id="setUserForm">
+            <input type="text" id="User" placeholder="Enter your name" />
+            <button type="submit">Set User</button>
+        </form>
     </div>
     @await Component.InvokeAsync("Channel",new {type = "Channels"})
 </div>
@@ -22,6 +24,7 @@
         @RenderBody()
     </main>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>

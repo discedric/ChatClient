@@ -1,5 +1,5 @@
 ﻿.message {
-    margin: 10px;
+    margin: 2px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -8,9 +8,24 @@
     flex-direction: column;
 }
 
-#channelMessages {
-    height: 100vh;
-    display:grid;
+.channelMessages {
+    max-height: 100vh;
+    display: flex;
+    flex-direction:column;
+    overflow-y: auto;
+    justify-content:space-between;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-bottom:86px;
+}
+
+.messages::-webkit-scrollbar {
+    width: 1px;
+    color: white;
 }
 
 .message-header {
@@ -28,10 +43,6 @@
     color: #ffffff;
 }
 
-.message-content{
-
-}
-
 .sendMessage {
     display: flex;
     align-items: center;
@@ -39,9 +50,9 @@
     padding: 10px;
     border-radius: 5px;
     background-color: #808080;
-    position: fixed;
     bottom: 0;
     width: -webkit-fill-available;
+    max-height:85px;
     box-sizing: border-box;
 }
 
@@ -61,4 +72,10 @@
     background-color: #333;
     color: #fff;
     cursor: pointer;
+}
+
+.chatter {
+    position:fixed;
+    width:-webkit-fill-available;
+    bottom:0;
 }

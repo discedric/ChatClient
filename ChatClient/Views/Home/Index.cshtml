@@ -1,11 +1,16 @@
-﻿@{
+﻿@model IList<ChatMessageResult>
+@{
     ViewData["Title"] = ViewBag.ChannelName;
-    @section Style{
+    @section Style {
         <link rel="stylesheet" href="~/css/Chat.css" asp-append-version="true" />
     }
 }
 
-<div id="channelMessages">
-    <partial name="ChannelViewPartial" model="new List<ChatMessageResult>()" />
+@if(ViewBag.ChannelName == "Home page"){
+<h1>No Chat selected</h1>
+}
+else{
+<div class="channelMessages">
+        <partial name="ChannelViewPartial" model="Model" />
 </div>
-
+}

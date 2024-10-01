@@ -1,45 +1,30 @@
 ﻿@model IList<ChatMessageResult>
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
 
-<div id="channelView">
-    <h1 id="Channel">@ViewBag.ChannelName</h1>
-    @if (Model.Any())
-    {
-        <div id="messages">
-            @foreach (var message in Model)
-            {
-                <div class="message">
-                    <div class="message-header">
-                        <p class="message-author">&lt;@message.author&gt;</p>
-                        <span class="message-date">@message.createdAt</span>
-                    </div>
-                    <div class="message-content">
-                        @message.message
-                    </div>
-                </div>
-            }
-        </div>
-    }
-    else
-    {
-        if(ViewBag.ChannelName != "Home Page")
-        {
-            <h1>No messages in this channel</h1>
-        }
-        else
-        {
-            <h1>No Chat selected</h1>
-        }
-    }
-</div>
-@if (ViewBag.ChannelName != "Home Page")
+<h1 id="Channel">@ViewBag.ChannelName</h1>
+@if (Model.Any())
 {
+    <div class="messages">
+        @foreach (var message in Model)
+        {
+            <div class="message">
+                <div class="message-header">
+                    <p class="message-author">&lt;@message.author&gt;</p>
+                    <span class="message-date">@message.createdAt</span>
+                </div>
+                <div class="message-content">
+                    @message.message
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h1>No messages in this channel</h1>
+}
+<div class="chatter">
     <form class="sendMessage">
         <input type="text" id="Message" placeholder="Type your message here" />
         <button type="submit">&#11166;</button>
     </form>
-}
+</div>
